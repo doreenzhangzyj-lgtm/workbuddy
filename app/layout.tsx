@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "上班搭子",
@@ -16,7 +17,10 @@ export default function RootLayout({
       lang="zh-CN"
       className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+  {children}
+  <Analytics />
+</body>
     </html>
   );
 }
